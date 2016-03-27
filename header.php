@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Cyclones Official</title>
 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
 </head>
 <body>
 	<header class="site_header">
