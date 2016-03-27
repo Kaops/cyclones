@@ -1,11 +1,11 @@
 /*
-  __  __       _       
- |  \/  |     (_)      
- | \  / | __ _ _ _ __  
- | |\/| |/ _` | | '_ \ 
+  __  __       _
+ |  \/  |     (_)
+ | \  / | __ _ _ _ __
+ | |\/| |/ _` | | '_ \
  | |  | | (_| | | | | |
  |_|  |_|\__,_|_|_| |_|
-                                      
+
 */
 
 body {
@@ -23,16 +23,16 @@ body {
  .hidden {
  	display:none;
  }
-/* 
+/*
 
-  _    _                _           
- | |  | |              | |          
- | |__| | ___  __ _  __| | ___ _ __ 
+  _    _                _
+ | |  | |              | |
+ | |__| | ___  __ _  __| | ___ _ __
  |  __  |/ _ \/ _` |/ _` |/ _ \ '__|
- | |  | |  __/ (_| | (_| |  __/ |   
- |_|  |_|\___|\__,_|\__,_|\___|_|   
-                                    
-                                    
+ | |  | |  __/ (_| | (_| |  __/ |
+ |_|  |_|\___|\__,_|\__,_|\___|_|
+
+
 
 */
 .site_header {
@@ -89,16 +89,16 @@ body {
 }
 
 
-/* 
+/*
 
-  __  __       _       
- |  \/  |     (_)      
- | \  / | __ _ _ _ __  
- | |\/| |/ _` | | '_ \ 
+  __  __       _
+ |  \/  |     (_)
+ | \  / | __ _ _ _ __
+ | |\/| |/ _` | | '_ \
  | |  | | (_| | | | | |
  |_|  |_|\__,_|_|_| |_|
-                       
-                       
+
+
 
 */
 
@@ -191,14 +191,93 @@ body {
 	text-align: center;
 	font-size: 40px;
 }
- /* FOOTER 
-  ______          _            
- |  ____|        | |           
- | |__ ___   ___ | |_ ___ _ __ 
+
+.site_main_shopwrapper {
+  width: 992px;
+  margin:auto;
+}
+
+.shop_nav_wrapper {
+	display:flex;
+	/*width:100%;*/
+	/*position: relative;*/
+	box-sizing: border-box;
+	justify-content: center;
+	top:0;
+	left:0;
+}
+
+.shop_nav {
+	flex-basis:50%;
+}
+.shop_nav a:link{
+ text-decoration: none;
+ color: #383838;
+}
+.shop_nav a:visited{
+ text-decoration: none;
+ color: #383838;
+}
+
+
+.shop_nav ul {
+	list-style: none;
+	margin: 50px 0 10px 0;
+	padding:0;
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.shop_nav ul li {
+	display:inline;
+	padding:27px 4%;
+}
+.shop_nav_hr {
+  height: 2px;
+  background-color: #383838;
+  margin-bottom: 30px;
+}
+
+.shop_item_preview{
+  position: relative;
+  height: 314px;
+  width: 233px;
+}
+
+.shop_item_addtocart {
+  position: absolute;;
+  bottom: 5px;
+  right: 5px;
+}
+
+.shop_items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.shop_item{
+  margin-bottom: 55px;
+}
+
+.shop_item h3{
+  width: 233px;
+  font-weight: normal;
+
+}
+.shop_item small{
+  font-weight: bold;
+  font-size: 16px;
+}
+ /* FOOTER
+  ______          _
+ |  ____|        | |
+ | |__ ___   ___ | |_ ___ _ __
  |  __/ _ \ / _ \| __/ _ \ '__|
- | | | (_) | (_) | ||  __/ |   
- |_|  \___/ \___/ \__\___|_|                             
-                               
+ | | | (_) | (_) | ||  __/ |
+ |_|  \___/ \___/ \__\___|_|
+
 	contact_icon farbe = #6a6e7c
  */
  .site_footer {
@@ -257,12 +336,12 @@ body {
  .footer_socialmedia_row a{
 	padding:13px;
  }
- @media all and (max-width: 1101px) { 
+ @media all and (max-width: 1101px) {
 	.footer_socialmedia_row a{
 	padding:5px;
  	}
  }
- .footer_socialmedia_rowimg:hover {
+ .footer_socialmedia_row img:hover {
 	background: url(../img/bgIMG_hover.png) no-repeat;
  }
  .footer_socialmedia_rowimg{
