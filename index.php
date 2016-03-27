@@ -12,7 +12,7 @@ if($site == "bio") {
 } elseif($site == "news") {
   include("news.php");
 } elseif($site == "shop") {
-  include("shop.php");
+  include("views/shop.php");
 } elseif($site == "checkout") {
   include("logic/checkout.php");
 } else {

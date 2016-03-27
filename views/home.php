@@ -1,4 +1,4 @@
-<main class="site_main_content">
+<main class="site_main_content" style="height: 925px">
   <div class="site_main_sliderwrapper">
   <div class="site_main_sliderleftbtn"><img src="img/slider_left.png" alt="" class="site_main_sliderleftimg"></div>
     <div class="site_main_sliderrightbtn"><img src="img/slider_right.png" alt="" class="site_main_sliderrightimg"></div>
