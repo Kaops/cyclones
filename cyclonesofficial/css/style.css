@@ -43,7 +43,7 @@ body {
 	position: relative;
 	box-sizing: border-box;
 	justify-content: flex-end;
-	position: fixed;
+	position: relative;
 	top:0;
 	left:0;
 }
@@ -58,7 +58,7 @@ body {
 .header_logo_wrapper{
 	flex-basis:50%;
 }
-.logo a, .sitemap_list a,{
+.logo a, .sitemap_list a, .site_main_slidernavlink{
 	display: block;
 	height: 100%;
 }
@@ -102,7 +102,7 @@ body {
 
 */
 
-/*html, body, .site_main_content, .site_main_sliderwrapper {
+/*html, body, .site_main_content{
 	width: 100%;
 	height: 100%;
 	min-height: 100%;
@@ -121,17 +121,16 @@ body {
 
 }
 .site_main_sliderwrapper{
-	min-height: 100%;
 	width: 100%;
 	min-width: 100%;
+	height: 100%;
 	background: url(../img/slider_img1.jpg) no-repeat;
 	background-position: center;
 	background-size: cover;
 	margin: 0;
 	position: relative;
-	top:70px;
+	top:0;
 	left:0;
-	z-index: -100;
 }
 .site_main_slidertext {
 	color:#fff;
@@ -139,7 +138,7 @@ body {
 	bottom:10%;
 	width: 500px;
 	left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -20%);
 }
 .site_main_sliederlink{
 	color:#232323;
@@ -153,17 +152,18 @@ body {
 }
 .site_main_sliderleftbtn, .site_main_sliderrightbtn {
 	position: absolute;
-	width: 400px;
+	width: 20%;
 	height: 100%;
 	top:0;
 }
 .site_main_sliderleftbtn:hover, .site_main_sliderrightbtn:hover {
-	background-color:#bbbbbb;
+	background-color:rgba(230,230,230,0.3);
 }
 .site_main_sliderleftimg, .site_main_sliderrightimg {
 	position: absolute;
-	top:50%;
-	left:200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .site_main_sliderleftbtn {
 	left:0;
@@ -210,11 +210,7 @@ body {
  	display:flex;
  	justify-content:center;
  	color:#ffffff;
- 	position: absolute;
- 	top:100%;
- 	left:0;
- 	bottom:0;
- 	right:0;
+
  }
  .footer_headline {
  	text-transform: uppercase;
@@ -261,8 +257,17 @@ body {
  .footer_socialmedia_row a{
 	padding:13px;
  }
- .footer_socialmedia_row img:hover {
+ @media all and (max-width: 1101px) { 
+	.footer_socialmedia_row a{
+	padding:5px;
+ 	}
+ }
+ .footer_socialmedia_rowimg:hover {
 	background: url(../img/bgIMG_hover.png) no-repeat;
+ }
+ .footer_socialmedia_rowimg{
+ 	height:50px;
+ 	width: 50px;
  }
  .footer_socialmedia_copyright {
  	color:#ffffff;
