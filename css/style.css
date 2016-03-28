@@ -347,6 +347,15 @@ body {
   right: 0;
 }
 
+.shop_item_pricetag_sale {
+	color: #6fb2ab;
+	margin-right: 10px;
+}
+
+.shop_item_pricetag_st {
+	text-decoration: line-through;
+}
+
  /* FOOTER
   ______          _
  |  ____|        | |

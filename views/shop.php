@@ -32,7 +32,7 @@
           <button class="shop_item_addtocart">Add to Cart</button>
         </div>
         <h3>LOST - ALBUM - VINYL EDITION</h3>
-        <small class="shop_item_pricetag">24,99 €</small>
+        <small class="shop_item_pricetag_sale">20,99 €</small><small class="shop_item_pricetag_st">24,99 €</small>
       </section>
 
       <section class="shop_item">
