@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cyclones Checkout</title>
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+</head>
+<body>
+	<header class="site_header">
+		<div class="header_logo_wrapper">
+			<h1 class="logo"><a href="#">Cyclones</a></h1>
+		</div>
+		<nav class="header_nav">
+			<ul>
+				<li><a href="#" >Bio</a></li>
+				<li><a href="#">Music</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Shop</a></li>
+				<li class="header_nav_borderleft"><a href="#" >My Account</a></li>
+				<li class="header_nav_cart_pos"><a href="#" ><img src="img/cart_icon.png" alt="" class="header_nav_carticon">Cart</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="site_main_content">
+		<div class="site_main_sliderwrapper">
+			<div class="main_loginwrapper">
+				<h2 class="main_headline">Login</h2><a href="#" class="main_registerlink">Register</a>
+				<form action="" class="main_loginform">
+				<p>
+					<label for="email_input" class="main_form_label">
+					Email Address
+					<input type="text" id="email_input" name"email" class="main_form_input">
+					</label>
+				</p>
+				<p>
+					<label for="pw_input" class="main_form_label">
+					Password
+					<input type="text" id="pw_input" name"password" class="main_form_input">
+					</label>
+				</p>
+				<p>
+					<input type="submit" value="LOGIN" class="main_form_btn">
+				</p>
+				<a href="#" class="main_login_link main_remember_pos"><div class="main_remember_toggle main_remember_toggle_off"></div>Remember Me</a>
+				<a href="#" class="main_login_link">Forgot Your Password ?</a>
+				<a href="#" class="main_login_link">Login As Guest</a>
+				</form>
+				
+			</div>
+		</div>
+		<div class="main_billing_wrapper">
+			<h2 class="main_headline">Billing Details</h2>
+			<form action="" class="main_billingform">
+				<div class="main_billingform_col">
+					<div class="main_form_splitwrapper main_billingform_row">
+						<div class="main_form_split">
+							<label for="" class="main_form_label">Gender</label>
+							<div class="main_form_gender">
+								<div class="main_form_gender_btn gender_btn--toggled">Male</div>
+		  						<div class="main_form_gender_btn">Female</div>
+	  						</div>
+						</div>
+						<div class="main_form_split">
+							<label for="title_input" class="main_form_label">
+								Title
+								<input type="text" id="title_input" name"title" class="main_form_input_half">
+							</label>
+						</div>
+					</div>
+					<p class="main_billingform_row">
+						<label for="company_input" class="main_form_label">
+						Company
+						<input type="text" id="company_input" name"company" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<label for="address_input" class="main_form_label">
+						Address
+						<input type="text" id="address_input" name"address" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<label for="country_input" class="main_form_label">
+						Country
+						<select id="country_input" class="main_form_input">
+							<option value="AT">Austria</option>
+							<option value="DK">Denmark</option>
+							<option value="DE">Germany</option>
+							<option value="NL">Netherlands</option>
+							<option value="GB">United Kingdom</option>	
+						</select>
+						</label>
+					</p>
+					<div class="main_form_splitwrapper main_billingform_row">
+						<div class="main_form_split">
+							<label for="city_input" class="main_form_label">
+							City
+							<input type="text" id="city_input" name"city" class="main_form_input_half">
+							</label>
+						</div>
+						<div class="main_form_split">
+							<label for="plz_input" class="main_form_label">
+							Plz
+							<input type="text" id="plz_input" name"plz" class="main_form_input_half">
+							</label>
+						</div>
+					</div>
+					<p class="main_billingform_row">
+						<button type="button" class="main_form_btn">Add a new Address</button>
+					</p>
+				</div>
+				<div class="main_billingform_col">
+					<p class="main_billingform_row">
+						<label for="name_input" class="main_form_label">
+						Name
+						<input type="text" id="name_input" name"name" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<label for="surname_input" class="main_form_label">
+						Surname
+						<input type="text" id="surname_input" name"surname" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<label for="billing_email_input" class="main_form_label">
+						Email
+						<input type="text" id="billing_email_input" name"billing_email" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<label for="billing_password_input" class="main_form_label">
+						Password
+						<input type="text" id="billing_password_input" name"billing_password" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<label for="billing_repassword_input" class="main_form_label">
+						Repeat Password
+						<input type="text" id="billing_repassword_input" name"surname" class="main_form_input">
+						</label>
+					</p>
+					<p class="main_billingform_row">
+						<input type="submit" name"continue" value="Continue" class="main_form_btn">
+					</p>
+				</div>
+			</form>
+		</div>
+	</main>
+	
+	<footer class="site_footer">
+		<section class="footer_sitemap">
+			<div class="footer_wrapper">
+				<h3 class="footer_headline">Sitemap</h3>
+				<ul class="footer_sitemap_list">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Music</a></li>
+					<li><a href="#">Bio</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">News</a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="footer_socialmedia">
+			<div class="footer_wrapper">
+				<h3 class="footer_headline">Social Media</h3>
+				
+				<div class="footer_socialmedia_row">
+					<a href="#"><img src="img/google.png" alt="" class="footer_socialmedia_rowimg"></a>
+					<a href="#"><img src="img/ig.png" alt="" class="footer_socialmedia_rowimg"></a>
+					<a href="#"><img src="img/soundcloud.png" alt="" class="footer_socialmedia_rowimg"></a>
+				</div>
+
+				<div class="footer_socialmedia_row">
+					<a href="#"><img src="img/fb.png" alt="" class="footer_socialmedia_rowimg"></a>
+					<a href="#"><img src="img/twitter.png" alt="" class="footer_socialmedia_rowimg"></a>
+					<a href="#"><img src="img/yp.png" alt="" class="footer_socialmedia_rowimg"></a>
+				</div>
+
+				<small class="footer_socialmedia_copyright">Copyright - Cyclones 2016 <br> <a href="#">Imprint</a></small>
+			</div>
+		</section>
+		<section class="footer_contact">
+			<div class="footer_wrapper">
+				<h3 class="footer_headline">Contact</h3>
+			<p>Need help shopping ?</p>
+			<p>Shoot us a message !</p>
+			<ul class="footer_contact_list">
+				<li><img src="img/tel.png" alt=""> 0699123123123</li>
+				<li><img src="img/email.png" alt=""><a href="mailto:">shop@cyclones.com</a></li>
+				<li><img src="img/email.png" alt=""><a href="#">Contact Form</a></li>
+			</ul>
+			</div>
+		</section>
+	</footer>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+</html>
