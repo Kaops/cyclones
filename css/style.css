@@ -278,11 +278,11 @@ body {
 .shop_item h3{
   width: 233px;
   font-weight: normal;
-
+	font-size: 16px;
 }
 .shop_item small{
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .shop_item_stockdisplay {

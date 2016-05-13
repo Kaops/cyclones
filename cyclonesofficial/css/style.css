@@ -1,13 +1,13 @@
 /*
-  __  __          _____ _   _ 
+  __  __          _____ _   _
  |  \/  |   /\   |_   _| \ | |
  | \  / |  /  \    | | |  \| |
  | |\/| | / /\ \   | | | . ` |
  | |  | |/ ____ \ _| |_| |\  |
  |_|  |_/_/    \_\_____|_| \_|
-                              
-                              
-                                      
+
+
+
 */
 
 body {
@@ -26,18 +26,18 @@ body {
  	display:none;
  }
 
-/* 
+/*
 
-  _    _ ______          _____  ______ _____  
- | |  | |  ____|   /\   |  __ \|  ____|  __ \ 
+  _    _ ______          _____  ______ _____
+ | |  | |  ____|   /\   |  __ \|  ____|  __ \
  | |__| | |__     /  \  | |  | | |__  | |__) |
- |  __  |  __|   / /\ \ | |  | |  __| |  _  / 
- | |  | | |____ / ____ \| |__| | |____| | \ \ 
+ |  __  |  __|   / /\ \ | |  | |  __| |  _  /
+ | |  | | |____ / ____ \| |__| | |____| | \ \
  |_|  |_|______/_/    \_\_____/|______|_|  \_\
-                                              
-                                               
-                                    
-                                    
+
+
+
+
 
 */
 .site_header {
@@ -101,27 +101,27 @@ body {
 }
 
 
-/* 
+/*
 
-   _____ ____  _   _ _______ ______ _   _ _______ 
+   _____ ____  _   _ _______ ______ _   _ _______
   / ____/ __ \| \ | |__   __|  ____| \ | |__   __|
- | |   | |  | |  \| |  | |  | |__  |  \| |  | |   
- | |   | |  | | . ` |  | |  |  __| | . ` |  | |   
- | |___| |__| | |\  |  | |  | |____| |\  |  | |   
-  \_____\____/|_| \_|  |_|  |______|_| \_|  |_|   
-                                                                   
+ | |   | |  | |  \| |  | |  | |__  |  \| |  | |
+ | |   | |  | | . ` |  | |  |  __| | . ` |  | |
+ | |___| |__| | |\  |  | |  | |____| |\  |  | |
+  \_____\____/|_| \_|  |_|  |______|_| \_|  |_|
+
 
 */
 
 /*
-   _____ _               _               _   
-  / ____| |             | |             | |  
- | |    | |__   ___  ___| | _____  _   _| |_ 
+   _____ _               _               _
+  / ____| |             | |             | |
+ | |    | |__   ___  ___| | _____  _   _| |_
  | |    | '_ \ / _ \/ __| |/ / _ \| | | | __|
- | |____| | | |  __/ (__|   < (_) | |_| | |_ 
+ | |____| | | |  __/ (__|   < (_) | |_| | |_
   \_____|_| |_|\___|\___|_|\_\___/ \__,_|\__|
-                                             
-                                             
+
+
 */
 .main_loginwrapper{
 	width: 400px;
@@ -157,7 +157,7 @@ body {
 .main_remember_toggle{
 	height:15px;
 	width: 25px;
-	
+
 	position: absolute;
 	top:50%;
 	left:20%;
@@ -261,15 +261,15 @@ a.main_login_link:hover {
 	background-color: #232323;
 	color:#6fb2ab;
 }
-/*  
-  _    _                                             
- | |  | |                                            
- | |__| | ___  _ __ ___   ___ _ __   __ _  __ _  ___ 
+/*
+  _    _
+ | |  | |
+ | |__| | ___  _ __ ___   ___ _ __   __ _  __ _  ___
  |  __  |/ _ \| '_ ` _ \ / _ \ '_ \ / _` |/ _` |/ _ \
  | |  | | (_) | | | | | |  __/ |_) | (_| | (_| |  __/
  |_|  |_|\___/|_| |_| |_|\___| .__/ \__,_|\__, |\___|
-                             | |           __/ |     
-                             |_|          |___/      
+                             | |           __/ |
+                             |_|          |___/
 
 */
 .site_main_sliderimglist {
@@ -355,17 +355,181 @@ a.main_login_link:hover {
 	text-align: center;
 	font-size: 40px;
 }
- /* FOOTER 
 
-  ______ ____   ____ _______ ______ _____  
- |  ____/ __ \ / __ \__   __|  ____|  __ \ 
+.site_main_shopwrapper {
+  width: 992px;
+  margin:auto;
+}
+
+.shop_nav_wrapper {
+	display:flex;
+	/*width:100%;*/
+	/*position: relative;*/
+	box-sizing: border-box;
+	justify-content: center;
+	top:0;
+	left:0;
+}
+
+.shop_nav {
+	flex-basis:50%;
+}
+.shop_nav a:link{
+ text-decoration: none;
+ color: #383838;
+}
+.shop_nav a:visited{
+ text-decoration: none;
+ color: #383838;
+}
+
+
+.shop_nav ul {
+	list-style: none;
+	margin: 50px 0 10px 0;
+	padding:0;
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.shop_nav ul li {
+	display:inline;
+	padding:27px 4%;
+}
+.shop_nav_hr {
+  height: 2px;
+  background-color: #383838;
+  margin-bottom: 30px;
+}
+
+.shop_item_preview{
+  position: relative;
+  height: 314px;
+  width: 233px;
+}
+
+.shop_item_addtocart {
+  position: absolute;;
+  bottom: 10px;
+  right: 10px;
+
+	width: 50px;
+	height: 45px;
+
+
+	cursor: pointer;
+	background: url('../img/cart.png') no-repeat center;
+	text-indent: -5555em;
+	/*border: 1px solid red;*/
+	border: none;
+}
+
+.shop_item_addtocart:hover {
+	-webkit-filter: drop-shadow(4px 4px 20px black) opacity(0.2);
+}
+
+.shop_items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.shop_item{
+  margin-bottom: 55px;
+}
+
+.shop_item h3{
+  width: 233px;
+  font-weight: normal;
+	font-size: 16px;
+}
+.shop_item small{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.shop_item_stockdisplay {
+		position: absolute;
+    visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s linear;
+		background-color: #b9bcb8;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: green;
+		width: 100%;
+		text-align: center;
+		vertical-align: middle;
+
+}
+
+.shop_item_preview:hover > .shop_item_stockdisplay {
+    visibility: visible;
+		opacity: 1;
+}
+
+.shop_item_onsale_wrapper {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.shop_item_onsale {
+  font: bold 15px;
+  color: #333;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background-color: #6fb2ab;
+  color: #323232;
+}
+
+.shop_item_onsale:before, .shop_item_onsale:after {
+  content: "";
+  border-top:   3px solid #6fb2ab;
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.shop_item_onsale:before {
+  left: 0;
+}
+.shop_item_onsale:after {
+  right: 0;
+}
+
+.shop_item_pricetag_sale {
+	color: #6fb2ab;
+	margin-right: 10px;
+}
+
+.shop_item_pricetag_st {
+	text-decoration: line-through;
+}
+ /* FOOTER
+
+  ______ ____   ____ _______ ______ _____
+ |  ____/ __ \ / __ \__   __|  ____|  __ \
  | |__ | |  | | |  | | | |  | |__  | |__) |
- |  __|| |  | | |  | | | |  |  __| |  _  / 
- | |   | |__| | |__| | | |  | |____| | \ \ 
+ |  __|| |  | | |  | | | |  |  __| |  _  /
+ | |   | |__| | |__| | | |  | |____| | \ \
  |_|    \____/ \____/  |_|  |______|_|  \_\
-                                           
-                                                                      
-                               
+
+
+
 	contact_icon farbe = #6a6e7c
  */
  .site_footer {
@@ -424,7 +588,7 @@ a.main_login_link:hover {
  .footer_socialmedia_row a{
 	padding:13px;
  }
- @media all and (max-width: 1101px) { 
+ @media all and (max-width: 1101px) {
 	.footer_socialmedia_row a{
 	padding:5px;
  	}
