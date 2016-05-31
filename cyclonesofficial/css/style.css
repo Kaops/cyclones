@@ -382,6 +382,10 @@ a.main_login_link:hover {
  text-decoration: none;
  color: #383838;
 }
+.shop_nav a:hover{
+ text-decoration: none;
+ color: #6fb2ab;
+}
 
 
 .shop_nav ul {
