@@ -134,6 +134,7 @@ body {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 14px;
+
 }
 .main_form_label{
 	text-align: left;
@@ -209,14 +210,17 @@ a.main_login_link:hover {
 
 
 
-.main_billing_wrapper{
+.main_billing_wrapper, .main_payment_wrapper{
 	width: 100%;
 	min-width: 100%;
 	height: 100%;
-	margin: 100px 0px;
+	margin: 300px 0px;
 	position: relative;
 	top:0;
 	left:0;
+}
+.main_billing_wrapper {
+	margin-top: 100px;
 }
 .main_billingform{
 	width: 70%;
@@ -242,24 +246,146 @@ a.main_login_link:hover {
 }
 
 .main_form_gender{
+	height: 100%;
 	width: 100%;
 	height:40px;
-	border:1px solid #bbbbbb;
 	box-sizing:border-box;
-	margin-top:10px;
-	background-color:#ffffff;
+	position: relative;
+}
+.main_form_gender input[type=radio]{
+	visibility: hidden;
+	position: absolute;
+}
+#female_radio {
+	left:70%;
 }
 .main_form_gender_btn {
-	line-height: 40px;
-	text-align: center;
-	width: 100%;
+	border: 2px solid #232323;
+	display:block;
+	border-radius: 100%;
+	height: 25px;
+	width: 25px;
+	position: absolute;
+	top:35px;
+	left: 0px;
+	z-index:10;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
+	cursor: pointer;
 }
-.main_form_gender_btn:last-child{
-	border-left: 1px solid #bbbbbb;
+.female_btn{
+	left: 70%;
 }
+.main_form_gender_btn:hover {
+	background: #6fb2ab;
+}
+
+.male_label, .female_label{
+	position: absolute;
+	top:0px;
+	height:100%;
+	width: 50%;
+	height: 70px;
+	cursor:pointer;
+}
+.male_label {
+	left:0px;
+}
+.female_label{
+	left:65%;
+}
+
+#male_radio:checked ~ .male_btn {
+		background: #6fb2ab;
+}
+
+#female_radio:checked ~ .female_btn {
+		background: #6fb2ab;
+}
+
 .gender_btn--toggled {
 	background-color: #232323;
 	color:#6fb2ab;
+}
+.main_payment_grid {
+	width: 70%;
+	min-width: 690px;
+	margin:30px auto;
+	display:flex;
+	justify-content:space-between;
+}
+
+.main_payment_column {
+	flex-basis: 50%;
+	border-bottom: 1px solid #999;
+}
+
+.payment_btn {
+	height: 150px;
+	border-radius: 2px;
+	background-color: #232323;
+	margin-bottom: 40px;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.payment_btn:hover:after {
+	width: 100%;
+}
+.payment_btn::after {
+	width: 0%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #383838;
+	content: "";
+	position: absolute;
+	z-index: 1;
+	transition: all 0.3s;
+	border-radius: 2px;
+}
+.payment_logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+}
+
+.payment_creditcard {
+	width: 230px;
+}
+.payment_readytext {
+	color: #6fb2ab;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.payment_info_text {
+	border-left: 1px solid #999;
+}
+
+.payment_info_headline {
+	margin: 0;
+}
+
+.payment_info_wrapper, .payment_btn {
+	width: 80%;
+	margin-left: 10%;
+	text-align:center;
+}
+.payment_info_wrapper a {
+	color: #6fb2ab;
+}
+.payment_info_paragraph {
+	line-height: 1.8em;
+}
+
+.payment_btn_highlight {
+	background-color: #383838;
 }
 /*
   _    _
@@ -272,7 +398,7 @@ a.main_login_link:hover {
                              |_|          |___/
 
 */
-.site_main_sliderimglist {
+.site_main_sliderlist {
 	list-style: none;
 	list-style-type: none;
 	margin:0;
@@ -284,17 +410,31 @@ a.main_login_link:hover {
 .site_main_sliderimglist li img {
 
 }
-.site_main_sliderwrapper, .main_wrapper{
+.site_main_sliderwrapper, .site_main_content, .main_wrapper{
 	width: 100%;
 	min-width: 100%;
 	height: 100%;
-	background: url(../img/slider_img1.jpg) no-repeat;
 	background-position: center;
 	background-size: cover;
 	margin: 0;
 	position: relative;
 	top:0;
 	left:0;
+}
+.full-bg {
+	background: url(../img/slider_img1.jpg) no-repeat;
+}
+.slide-1{
+	background: url(../img/slider_img1.jpg) no-repeat;
+}
+.slide-2{
+	background: url(../img/slider_img2.jpg) no-repeat;
+}
+.slide-3{
+	background: url(../img/slider_img3.jpg) no-repeat;
+}
+.slide-4{
+	background: url(../img/slider_img4.jpg) no-repeat;
 }
 .site_main_slidertext {
 	color:#fff;
@@ -348,7 +488,7 @@ a.main_login_link:hover {
 	position: absolute;
 	bottom:0px;
 	left:0px;
-	z-index: -50;
+	z-index: 50;
 
 }
 .site_main_sliderheader{
@@ -381,10 +521,6 @@ a.main_login_link:hover {
 .shop_nav a:visited{
  text-decoration: none;
  color: #383838;
-}
-.shop_nav a:hover{
- text-decoration: none;
- color: #6fb2ab;
 }
 
 

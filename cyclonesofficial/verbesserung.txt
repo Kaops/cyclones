@@ -1,4 +1,4 @@
-Deine Abgabe ist leider nicht ok.
+﻿Deine Abgabe ist leider nicht ok.
 
 Bitte verbessere folgende Punkte:
 - HTML ist nicht valide
@@ -12,15 +12,16 @@ Bitte verbessere folgende Punkte:
 
 - Gender bitte mit form tags, das kann man genau so stylen ohne javascript
 ### TODO: change -> restyle
+### DONE (sind jetzt radiobuttons)
 
 
 - Anker, Buttons, input auch pseudoklasse wie hover,focus usw stylen und konsistent arbeiten.
-### TODO: ??? the fuck does that even mean
+### TODO: ??? the fuck does that even mean 
 
 
 - Startseite wirkt noch nicht fertig-> bitte hier mehr Inhalte
 ### TODO: add the rest of the slides and add functionality with jquery
-### DONE
+### DONE (mehr slides, insgesamt 4)
 
 
 - Semantik ist teilweise noch nicht ganz ok: Shop items sollten keinen section tag sondern article tag bekommen, und der shop item container den section tag
