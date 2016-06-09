@@ -19,7 +19,7 @@
 				<li><a href="#">News</a></li>
 				<li><a href="#">Shop</a></li>
 				<li class="header_nav_borderleft"><a href="#" >My Account</a></li>
-				<li class="header_nav_cart_pos"><a href="#" ><img src="img/cart_icon.png" alt="" class="header_nav_carticon">Cart</a></li>
+				<li class="header_nav_cart_pos"><a href="#" ><img src="img/cart_icon.png" alt="" class="header_nav_carticon"><span class="header_nav_carttext">Cart</span></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -60,13 +60,14 @@
 					<div class="main_form_splitwrapper main_billingform_row">
 						<div class="main_form_split">
 							<div class="main_form_gender">
+								<p class="main_form_label" id="gender_label">Gender</p>
+								<input type="radio" name="gender" value="male"  id="male_radio" class="main_form_gender_btn">
 								<label for="male_radio" class="main_form_label male_label">Male</label>
-								<input type="radio" name="gender" value="male"  id="male_radio">
-								<div class="main_form_gender_btn male_btn"></div>
-		  						<input type="radio" name="gender" value="female" id="female_radio">
-		  						<label for="female_radio" class="main_form_label female_label">Female</label>
-		  						<div class="main_form_gender_btn female_btn"></div>
-	  						</div>
+
+		  					<input type="radio" name="gender" value="female" id="female_radio" class="main_form_gender_btn">
+		  					<label for="female_radio" class="main_form_label female_label">Female</label>
+
+	  					</div>
 						</div>
 						<div class="main_form_split">
 							<label for="title_input" class="main_form_label">
