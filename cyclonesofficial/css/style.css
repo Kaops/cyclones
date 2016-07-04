@@ -683,6 +683,75 @@ input[type=radio]:checked + label {
 .shop_item_pricetag_st {
 	text-decoration: line-through;
 }
+
+.site_main_bio_imgwrapper{
+	position: relative;
+}
+
+.site_main_bio_mainimg{
+
+
+	max-width:100%;
+	max-height:100%;
+}
+
+.site_main_bio_div_1{
+	top:0;
+	left:0;
+	position:absolute;
+	max-width: 22.9%;
+	max-height: 100%;
+	display: inline-block;
+}
+.site_main_bio_div_2{
+	bottom:0;
+	left:22.9%;
+	position:absolute;
+	max-width: 15.8%;
+	max-height: 100%;
+	display: inline-block;
+}
+.site_main_bio_div_3{
+	bottom:0;
+	left:38.7%;
+	position:absolute;
+	max-width: 16.3%;
+	height: 100%;
+	display: inline-block;
+}
+.site_main_bio_div_4{
+	position:absolute;
+	max-width: 17.6%;
+	height: 100%;
+	display: inline-block;
+}
+.site_main_bio_div_5{
+	position:absolute;
+	max-width: 27.4%;
+	height: 100%;
+	display: inline-block;
+}
+
+.site_main_bio_hover_1{
+  max-width: 100%;
+	max-height: 100%;
+}
+.site_main_bio_hover_2{
+  max-width: 100%;
+	max-height: 100%;
+}
+.site_main_bio_hover_3{
+  max-width: 100%;
+	max-height: 100%;
+}
+.site_main_bio_hover_4{
+  max-width: 100%;
+	max-height: 100%;
+}
+.site_main_bio_hover_5{
+  max-width: 100%;
+	max-height: 100%;
+}
  /* FOOTER
 
   ______ ____   ____ _______ ______ _____
