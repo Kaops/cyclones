@@ -15,9 +15,9 @@
 		<nav class="header_nav">
 			<ul>
 				<li><a href="#">Bio</a></li>
-				<li><a href="#">Music</a></li>
-				<li><a href="#">News</a></li>
-				<li><a href="#">Shop</a></li>
+				<li><a href="music.html">Music</a></li>
+				<li><a href="blog.html">News</a></li>
+				<li><a href="shop.html">Shop</a></li>
 				<li class="header_nav_borderleft"><a href="#" >My Account</a></li>
 				<li class="header_nav_cart_pos"><a href="#" ><img src="img/cart_icon.png" alt="" class="header_nav_carticon"><span class="header_nav_carttext">Cart</span></a></li>
 			</ul>
@@ -199,6 +199,50 @@
 					</article>
 				</div>
 			</div>
+		</div>
+		<div class="main_revieworder_wrapper">
+			<h2 class="main_headline">Review your order</h2>
+			<div class="review_table">
+				<table>
+				 <tr>
+				 	<th></th>
+				    <th>Product</th>
+				    <th>Price</th> 
+				    <th>Quantity</th>
+				    <th>Total</th>
+				  </tr>
+				  <tr> 
+				  	<td><img src="img/delete_icon.png" alt=""><img src="shopitems/lost.jpg" height="32" width="32" alt=""></td>
+				    <td>Cyclones - Lost</td>
+				    <td>19.99€</td> 
+				    <td><button class="review_table_quantity_btn">-</button><input type="text" placeholder="1" class="review_table_quantity_input"><button class="review_table_quantity_btn">+</button></td>
+				    <td>19.99€</td>
+				  </tr>
+				</table>
+				<div class="coupon_wrapper">
+					<input type="text" placeholder="Enter your coupon code here" class="review_coupon_input main_form_input"><button>apply coupon</button>
+				</div>
+			</div>
+			
+			<div class="orderdetails_table">
+				<h2 class="main_headline">Order Details</h2>
+				<table>
+				 <tr>
+				    <th>Subtotal</th>
+				    <th>Shipping</th> 
+				    <th>Mwst.</th>
+				    <th>Total</th>
+				  </tr>
+				  <tr> 
+				  	<td>91.95€</td>
+				    <td>Express: 20€</td>
+				    <td>18.39€</td> 
+				    <td>130.34€</td>
+				  </tr>
+				</table>
+				<button class="make_order_btn">Make order</button>
+			</div>
+			
 		</div>
 	</main>
 
