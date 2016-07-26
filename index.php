@@ -8,13 +8,15 @@ require("header.php");
 if($site == "bio") {
   include("views/bio.php");
 } elseif($site == "music") {
-  include("logic/music.php");
+  include("views/music.php");
 } elseif($site == "news") {
-  include("news.php");
+  include("views/news.php");
 } elseif($site == "shop") {
   include("views/shop.php");
 } elseif($site == "checkout") {
   include("logic/checkout.php");
+} elseif($site == "home") {
+  include("views/checkout.php");
 } else {
   include("views/home.php");
 }
