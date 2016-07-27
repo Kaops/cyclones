@@ -3,6 +3,7 @@
 //GET Parameters
 $site = isset($_GET['site']) ? $_GET["site"] : "home";
 
+
 require("header.php");
 
 if($site == "bio") {
@@ -15,8 +16,10 @@ if($site == "bio") {
   include("views/shop.php");
 } elseif($site == "checkout") {
   include("logic/checkout.php");
-} elseif($site == "home") {
-  include("views/checkout.php");
+} elseif($site == "article") {
+  include("views/article.php");
+}elseif($site == "home") {
+  include("views/home.php");
 } else {
   include("views/home.php");
 }

@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-$graph_link = mysqli_connect('localhost', 'root', 'secret', 'cyclones_db');
+$graph_link = mysqli_connect('localhost', 'root', '', 'cyclones');
 
 if (!$graph_link) {
   die('Connect Error (' . mysqli_connect_errno() . ') '
