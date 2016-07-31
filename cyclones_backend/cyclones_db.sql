@@ -217,24 +217,27 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` float NOT NULL,
   `variation_id` int(11) DEFAULT NULL,
   `in_stock` int(255) NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `category` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `on_sale` tinyint(1) NOT NULL,
+  `sale_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `product`
+-- Daten für Tabelle `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `description`, `price`, `variation_id`, `in_stock`, `img`) VALUES
-(1, 'metus eu', 'amet, dapibus id, blandit at, nisi.', 12, 1, 70, 'img/shop_item_default.jpg'),
-(2, 'Curae; Phasellus', 'netus et malesuada fames ac turpis egestas. Aliquam fringilla', 12, 2, 1, 'img/shop_item_default.jpg'),
-(3, 'Cras sed', 'a ultricies adipiscing, enim mi', 18, 3, 72, 'img/shop_item_default.jpg'),
-(4, 'faucibus', 'luctus et ultrices posuere cubilia Curae; Phasellus ornare.', 18, 4, 27, 'img/shop_item_default.jpg'),
-(5, 'interdum', 'netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam', 17, 5, 75, 'img/shop_item_default.jpg'),
-(6, 'nisl elementum', 'per inceptos hymenaeos. Mauris ut quam vel sapien', 10, 6, 88, 'img/shop_item_default.jpg'),
-(8, 'molestie', 'risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc', 17, 8, 10, 'img/shop_item_default.jpg');
+INSERT INTO `product` (`id`, `name`, `description`, `price`, `variation_id`, `in_stock`, `img`, `category`, `on_sale`, `sale_price`) VALUES
+(1, 'metus eu', 'amet, dapibus id, blandit at, nisi.', 12, 1, 0, 'img/lost_mockup_shop.jpg', 'vinyl', 1, 10),
+(2, 'Curae; Phasellus', 'netus et malesuada fames ac turpis egestas. Aliquam fringilla', 12, 2, 1, 'img/lost_mockup_shop.jpg', 'vinyl', 1, 9.99),
+(3, 'Cras sed', 'a ultricies adipiscing, enim mi', 18, 3, 72, 'img/lost_mockup_shop.jpg', 'vinyl', 0, 0),
+(4, 'faucibus', 'luctus et ultrices posuere cubilia Curae; Phasellus ornare.', 18, 4, 0, 'img/lost_mockup_shop.jpg', 'vinyl', 0, 0),
+(5, 'interdum', 'netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam', 17, 5, 75, 'img/lost_mockup_shop.jpg', 'vinyl', 0, 0),
+(6, 'nisl elementum', 'per inceptos hymenaeos. Mauris ut quam vel sapien', 10, 6, 88, 'img/lost_mockup_shop.jpg', 'vinyl', 0, 0),
+(8, 'molestie', 'risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc', 17, 8, 10, 'img/lost_mockup_shop.jpg', 'vinyl', 1, 14.99);
 
 -- --------------------------------------------------------
 

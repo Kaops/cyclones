@@ -1,13 +1,18 @@
 <?php
+// require("logic/cartfunct.php");
 if(is_post_request()) {
     //error checker
     $error = 0;
     $errors = [];
 
+    //get the dank money
+    $total_after_submission = $_POST["total_after_submission"];
+
     //get billing stuff
     if (isset($_POST["gender"])) {
       $gender = $_POST["gender"];
     }
+    $title;
     if (isset($_POST["title"])) {
       $title = mysqli_real_escape_string($link, $_POST["title"]);
     }
@@ -19,6 +24,7 @@ if(is_post_request()) {
     $plz = mysqli_real_escape_string($link, $_POST["plz"]);
     $name = mysqli_real_escape_string($link, $_POST["name"]);
     $surname = mysqli_real_escape_string($link, $_POST["surname"]);
+
 
     //billing validation
     if(strlen($address) > 5) {
@@ -33,7 +39,7 @@ if(is_post_request()) {
       $error = 1;
       $errors["auth"] = "The name of the City you entered was too short.";
     }
-    if(strlen($plz) > 4) {
+    if(strlen($plz) > 3) {
 
     } else {
       $error = 1;
@@ -63,10 +69,18 @@ if(is_post_request()) {
       $email = mysqli_real_escape_string($link, $_POST["billing_email"]);
       $password = mysqli_real_escape_string($link, $_POST["billing_password"]);
       $password_re = mysqli_real_escape_string($link, $_POST["billing_password_re"]);
+      $birthdate = $_POST["billing_date"];
+
+      //birthdate verification
+      if(strlen($birthdate) > 1) {
+
+      } else {
+        $error = 1;
+        $errors["auth"] = "Please enter your birthdate.";
+      }
 
       //email verification
       $email_array = explode("@", $email);
-
 
       if(count($email_array) === 2) {
           $dot_index = strpos($email_array[1], ".");
@@ -93,12 +107,6 @@ if(is_post_request()) {
       } else {
         $error = 1;
         $errors["auth"] = "@ cannot be the first sign of your email";
-      }
-      if($dot_index < (strlen($email_array[1])-2) && $dot_index > 1) {
-
-      } else {
-        $error = 1;
-        $errors["auth"] = ". darf nicht direkt nach bzw. vor dem @-Zeichen stehen";
       }
 
       //password verification
@@ -200,102 +208,79 @@ if(is_post_request()) {
 
     //if fuckwit customer fucked it up
     if($error == 1) {
-      print_r("pls stop happening");
       echo get_error($errors, "auth");
-      print_r($error);
+      print_r($birthdate);
     } else { //if customer finally got his shit together
-      print_r("why does this suffering never end?");
-      echo get_error($errors, "auth");
-      print_r($error);
-      // $password_hash = password_hash($password, PASSWORD_DEFAULT);
-      // global $link;
-      //
-      // // query zusammenbauen
-      // $sql = "INSERT INTO
-      // users (email, password_hash)
-      // VALUES
-      // ('$email', '$password_hash')";
-      //
-      // // query ausführen
-      // $result = mysqli_query($link, $sql);
-      // red("index.php", "Registrierung erfolgreich!");
+      print_r("Order successful!");
+
+      if (isset($_POST["billing_email"])) {
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        global $link;
+
+        $sql = "INSERT INTO
+        users (email, pw_hash, pref_payment, title, name, surname, birthday, address, country, city, postcode)
+        VALUES
+        ('$email', '$password_hash', '$payment', '$title', '$name', '$surname', '$birthdate', '$address', '$country', '$city', '$plz')";
+        $result = mysqli_query($link, $sql);
+      }
+
+      global $link;
+      $sql = "SELECT * FROM users WHERE email = '$email'";
+      $result = mysqli_query($link, $sql);
+      //print_r($result);
+      $idhelper = mysqli_fetch_assoc($result);
+      //print_r($idhelper);
+      if(isset($_SESSION["logged_in"]) === true){$user_id = $_SESSION['user_id'];}else {$user_id = $idhelper['id'];}
+
+      if ($_POST["use_alternate"] == 1) {
+        $address = $alternate_address;
+        $country = $alternate_country;
+        $city = $alternate_city;
+        $plz = $alternate_plz;
+        $name = $alternate_name;
+        $surname = $alternate_surname;
+      }
+      $productids = [];
+      foreach ($products_in_cart as $product_in_cart){
+        $productids[] = $product_in_cart["id"];
+        //print_r($product_in_cart["id"]);
+      }
+      print_r($productids);
+      $ordered_product_id = $productids[0];
+      print_r($ordered_product_id);
+
+      $sql = "INSERT INTO
+      orders (user_id, sum, ordered_product_id, address, country, city, postcode, name, surname, payed_with, shipping_method )
+      VALUES
+      ('$user_id', '$total_after_submission', '$ordered_product_id', '$address', '$country', '$city', '$plz', '$name', '$surname', '$payment', '$shipping' )";
+      $result = mysqli_query($link, $sql);
+      print_r($result);
+
+      $orderid = mysqli_insert_id($link);
+      print_r($orderid);
+      foreach ($products_in_cart as $product_in_cart){
+        $entry = get_article($product_in_cart['id']);
+        $op_product_id = $entry['id'];
+        $op_amount = $product_in_cart['quantity'];
+        $sql = "INSERT INTO
+        ordered_products (product_id, amount, order_id)
+        VALUES
+        ('$op_product_id', '$op_amount', '$orderid')";
+        $result = mysqli_query($link, $sql);
+
+      }
+      //empty cart after order was submitted
+      $_SESSION['cart'] = [];
+
     }
 
-    // //email verification
-    // $email_array = explode("@", $email);
-    // $error = 0;
-    //
-    // if(count($email_array) === 2) {
-    //     $dot_index = strpos($email_array[1], ".");
-    // } else {
-    //     $dot_index = -1;
-    // }
-    // if(!isset($email_array[1])) {
-    //   $email_array[1] = "";
-    // }
-    // if(strlen($email) > 5) {
-    //
-    // } else {
-    //   $error == 1;
-    //   $errors["auth"] = "Deine eingegebene E-Mail-Adresse ist zu kurz.";
-    // }
-    // if(count($email_array) === 2) {
-    //
-    // } else {
-    //   $error == 1;
-    //   $errors["auth"] = "Email darf nur 1 @-Zeichen enthalten";
-    // }
-    //
-    // if(strpos($email, "@") >= 1) {
-    // } else {
-    //   $error == 1;
-    //   $errors["auth"] = "@-Zeichen darf nicht an 1. Stelle stehen";
-    // }
-    // if($dot_index < (strlen($email_array[1])-2) && $dot_index > 1) {
-    //
-    // } else {
-    //   $error == 1;
-    //   $errors["auth"] = ". darf nicht direkt nach bzw. vor dem @-Zeichen stehen";
-    // }
-    //
-    // //password verification
-    // if (strlen($password) >= 6) {
-    //
-    // } else {
-    //   $error = 1;
-    //   $errors["auth"] = "Dein Passwort muss mind. 6 Zeichen lang sein.";
-    // }
-    // if ($password === $password_re) {
-    //
-    // }else {
-    //   $error = 1;
-    //   $errors["auth"] = "Passwort stimmt nicht mit Passwortwiederholung überein.";
-    // }
-    //
-    //
-    // if($error == 1) {
-    //
-    // } else {
-    //   $password_hash = password_hash($password, PASSWORD_DEFAULT);
-    //   global $link;
-    //
-    //   // query zusammenbauen
-    //   $sql = "INSERT INTO
-    //   users (email, password_hash)
-    //   VALUES
-    //   ('$email', '$password_hash')";
-    //
-    //   // query ausführen
-    //   $result = mysqli_query($link, $sql);
-    //   red("index.php", "Registrierung erfolgreich!");
-    // }
   }
   function get_error($errors, $key) {
   if(isset($errors[$key])) {
     // HEREDOC-Syntax
     $error = <<<HEREDOC
 
-<p class="help-block">
+<p class="help-block" style="text-align:center;">
   {$errors[$key]}
 </p>
 HEREDOC;

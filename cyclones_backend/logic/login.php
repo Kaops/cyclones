@@ -7,13 +7,14 @@ if(is_logged_in()) {
     $email = mysqli_real_escape_string($link, $_POST["email"]);
     $password = mysqli_real_escape_string($link, $_POST["password"]);
 
-    $sql = "SELECT email, pw_hash FROM users WHERE email = '$email'";
+    $sql = "SELECT email, pw_hash, id FROM users WHERE email = '$email'";
     $result = mysqli_query($link, $sql);
 
     if(mysqli_num_rows($result) === 1) {
         $user = mysqli_fetch_assoc($result);
         if(password_verify($password, $user["pw_hash"])) {
           $_SESSION['logged_in'] = true;
+          $_SESSION['user_id'] = $user['id'];
           redirect_to("index.php", "Logged in as " . $user['email'] . " on " . date('l jS \of F Y h:i:s A'), "success");
         } else {
           $error = 1;

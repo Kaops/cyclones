@@ -427,18 +427,22 @@ $(function(){
       var new_total = total_before + 20.00;
       new_total = new_total.toFixed(2);
       $("#total_after").text(new_total);
+      $("#total_after_submission").val(new_total);
     } else if ($("#shipping_input").val() == "standard" && total_before < 90.00) {
       var new_total = total_before + 10.00;
       new_total = new_total.toFixed(2);
       $("#total_after").text(new_total);
+      $("#total_after_submission").val(new_total);
     } else if ($("#shipping_input").val() == "standard" && total_before >= 90.00) {
       var new_total = total_before;
       new_total.toFixed(2);
       $("#total_after").text(new_total);
+      $("#total_after_submission").val(new_total);
     } else {
       var new_total = total_before;
       new_total = new_total.toFixed(2);
       $("#total_after").text(new_total);
+      $("#total_after_submission").val(new_total);
     }
   }
 });

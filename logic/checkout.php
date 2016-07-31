@@ -122,6 +122,12 @@
         </p>
         <?php if(isset($_SESSION["logged_in"]) === true){ ?>
         <?php } else { ?>
+          <p class="main_billingform_row">
+            <label for="billing_email_input" class="main_form_label">
+            Birth Date *
+            <input type="date" id="billing_date_input" name="billing_date" class="main_form_input" required>
+            </label>
+          </p>
         <p class="main_billingform_row">
           <label for="billing_email_input" class="main_form_label">
           Email *
@@ -331,6 +337,7 @@
           </span> €</td>
         </tr>
       </table>
+      <input type="hidden" name="total_after_submission" id="total_after_submission" value="<?php echo $total ?>">
       <input type="submit" class="make_order_btn" value="Place Order">
       <!-- <button class="make_order_btn">Place order</button> -->
     </div>
