@@ -18,7 +18,7 @@ setlocale(LC_ALL, "de_AT");
 if(!isset($_SESSION['popup_icon'])){ $_SESSION['popup_icon'] = "img/default_icon.png"; }
 $errors = [];
 $current_page = isset($_GET['page']) ? $_GET["page"] : 1;
-$site = isset($_GET['site']) ? $_GET["site"] : "welcome";
+$site = isset($_GET['site']) ? $_GET["site"] : "dashboard";
 
 require_once("views/header.php");
 require("dbconnect.php");

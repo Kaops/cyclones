@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2016 at 07:06 PM
+-- Generation Time: Jul 31, 2016 at 02:09 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -39,28 +39,28 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`user_id`, `id`, `country`, `city`, `plz`) VALUES
-(1, 1, 'Congo (Brazzaville)', 'Vijayawada', 80375),
-(2, 2, 'Guatemala', 'Spinoso', 56141),
-(3, 3, 'Anguilla', 'Köln', 47643),
-(4, 4, 'Mauritania', 'Pisa', 36698),
-(5, 5, 'Israel', 'Varena', 4788),
-(6, 6, 'Equatorial Guinea', 'Quillota', 9194),
-(7, 7, 'Haiti', 'Wibrin', 99458),
-(8, 8, 'Afghanistan', 'Knokke', 767),
-(9, 9, 'Costa Rica', 'Wolfenbüttel', 199985),
-(10, 10, 'Tonga', 'Geleen', 7675),
-(11, 11, 'Niue', 'Atlanta', 94684),
-(12, 12, 'Philippines', 'Shimla', 3382),
-(13, 13, 'Tonga', 'Weiterstadt', 2664),
-(14, 14, 'Liechtenstein', 'Erchie', 2474),
-(15, 15, 'Antarctica', 'Vance', 49573),
-(16, 16, 'Svalbard and Jan Mayen Islands', 'Anzegem', 61604),
-(17, 17, 'Peru', 'Jupille-sur-Meuse', 915071),
-(18, 18, 'Japan', 'Branchon', 11205),
-(19, 19, 'Isle of Man', 'Guelph', 6799),
-(20, 20, 'Saint Kitts and Nevis', 'Coaldale', 9408),
-(21, 21, 'Malawi', 'Vaux-lez-Rosieres', 86681),
-(22, 22, 'Italy', 'Lourdes', 27426);
+(1, 1, 'Congo (Brazzaville)', 'Vienna', 80375),
+(2, 2, 'Guatemala', 'Vienna', 56141),
+(3, 3, 'Anguilla', 'Vienna', 47643),
+(4, 4, 'Mauritania', 'Vienna', 36698),
+(5, 5, 'Israel', 'Tyrol', 4788),
+(6, 6, 'Equatorial Guinea', 'Tyrol', 9194),
+(7, 7, 'Haiti', 'Lower Austria', 99458),
+(8, 8, 'Afghanistan', 'Lower Austria', 767),
+(9, 9, 'Costa Rica', 'Lower Austria', 199985),
+(10, 10, 'Tonga', 'Vienna', 7675),
+(11, 11, 'Niue', 'Vienna', 94684),
+(12, 12, 'Philippines', 'Upper Austria', 3382),
+(13, 13, 'Tonga', 'Upper Austria', 2664),
+(14, 14, 'Liechtenstein', 'Vienna', 2474),
+(15, 15, 'Antarctica', 'Tyrol', 49573),
+(16, 16, 'Svalbard and Jan Mayen Islands', 'Vienna', 61604),
+(17, 17, 'Peru', 'Lower Austria', 915071),
+(18, 18, 'Japan', 'Upper Austria', 11205),
+(19, 19, 'Isle of Man', 'Vienna', 6799),
+(20, 20, 'Saint Kitts and Nevis', 'Tyrol', 9408),
+(21, 21, 'Malawi', 'Lower Austria', 86681),
+(22, 22, 'Italy', 'Upper Austria', 27426);
 
 -- --------------------------------------------------------
 
@@ -187,25 +187,25 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `sum`, `created_at`, `ordered_product_id`) VALUES
-(1, 6, 54, '2016-07-16 07:02:04', 5),
-(2, 17, 83, '2016-07-18 09:27:56', 3),
-(3, 11, 249, '2016-07-02 06:38:52', 9),
-(4, 20, 290, '2016-07-10 18:33:05', 7),
-(5, 11, 469, '2016-07-07 02:34:34', 5),
-(6, 18, 331, '2016-07-23 08:06:56', 4),
-(7, 6, 307, '2016-07-17 12:47:14', 7),
-(8, 5, 417, '2016-07-03 13:20:24', 1),
+(1, 6, 54, '2016-01-16 07:02:04', 5),
+(2, 17, 83, '2016-02-18 09:27:56', 3),
+(3, 11, 249, '2016-02-02 06:38:52', 9),
+(4, 20, 290, '2016-03-10 18:33:05', 7),
+(5, 11, 469, '2016-04-07 02:34:34', 5),
+(6, 18, 331, '2016-04-23 08:06:56', 4),
+(7, 6, 307, '2016-05-17 12:47:14', 7),
+(8, 5, 417, '2016-06-03 13:20:24', 1),
 (9, 5, 474, '2016-07-09 23:13:39', 1),
 (10, 18, 141, '2016-07-10 00:36:14', 2),
-(11, 14, 251, '2016-07-20 16:34:23', 1),
-(12, 3, 246, '2016-07-12 21:28:05', 3),
-(13, 22, 266, '2016-07-20 06:23:05', 2),
-(14, 3, 45, '2016-07-04 02:57:44', 5),
-(15, 12, 95, '2016-07-30 19:11:27', 4),
-(16, 19, 148, '2016-07-22 23:17:09', 1),
+(11, 14, 251, '2016-03-20 16:34:23', 1),
+(12, 3, 246, '2016-01-12 21:28:05', 3),
+(13, 22, 266, '2016-02-20 06:23:05', 2),
+(14, 3, 45, '2016-03-04 02:57:44', 5),
+(15, 12, 95, '2016-04-30 19:11:27', 4),
+(16, 19, 148, '2016-06-22 23:17:09', 1),
 (17, 17, 83, '2016-07-18 23:05:00', 1),
-(18, 10, 202, '2016-07-05 22:01:39', 3),
-(19, 1, 360, '2016-07-15 18:30:42', 5);
+(18, 10, 202, '2016-01-05 22:01:39', 3),
+(19, 1, 360, '2016-02-15 18:30:42', 5);
 
 -- --------------------------------------------------------
 
@@ -291,27 +291,27 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `pw_hash`, `created_at`, `last_order`, `address_id`, `pref_payment`, `title`, `company`, `name`, `surname`, `deleted`, `is_admin`, `birthday`) VALUES
 (1, 'admin@test.at', '$2y$10$J3KCu6cKQDq4emtYwvwSZON6PYKNRvkry4qoPUPyUskxNnFctJHEG', '2016-06-24 11:43:47', 1, 1, 'Paypal', 'Admin', 'Cyclones', 'Max', 'Waltenberger', NULL, 1, '1971-02-01'),
-(2, 'Sededed', 'lolol', '2016-06-27 09:07:06', 2, 2, '', '', '', 'sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero', '', 1, 0, '1945-02-08'),
-(3, 'niblor@inceptos.co.uk', 'Sed dictum. Proin eget', '0000-00-00 00:00:00', 3, 3, 'eget', '', 'Vitae Mauris Sit Inc.', 'Xerxes', 'Morrow', NULL, 0, '1958-11-29'),
-(4, 'luctus@leoin.net', 'Nam interdum enim', '0000-00-00 00:00:00', 4, 4, 'iaculis,', 'Mr.', 'Metus Associates', 'Wandaa', 'Anderson', 1, 1, '1965-10-14'),
-(5, 'nascetur@sollicituda.ca', 'porttitor', '0000-00-00 00:00:00', 5, 5, 'ipsum', '', 'Proin Dolor Nulla Corporation', 'Jolene', 'Workman', NULL, 0, '1957-02-23'),
-(6, 'nec@ateget.co.uk', 'dapibus ligula.', '0000-00-00 00:00:00', 6, 6, 'ultrices,', '', 'Interdum Curabitur LLP', 'Kyla', 'Horne', NULL, 0, '1971-01-27'),
-(7, 'Ut@Fusce.co.uk', 'Donec felis orci, adipiscing', '0000-00-00 00:00:00', 7, 7, 'vel,', 'Ms.', 'Lectus Corporation', 'Jesse', 'Morris', NULL, 0, '1994-05-20'),
-(8, 'Donec@etnetus.uk', 'tristique senectus et netus', '0000-00-00 00:00:00', 8, 8, 'eu', 'Mr.', 'Sed Sapien Limited', 'Oliver', 'Cooke', 1, 0, '1955-11-08'),
-(9, 'sit@sapien.ca', 'Phasellus in felis.', '0000-00-00 00:00:00', 9, 9, 'semper', 'Mr.', 'Ultrices A LLC', 'Miriam', 'Griffith', NULL, 0, '1987-12-11'),
-(10, 'erat@elitsed.com', 'vestibulum nec, euismod', '0000-00-00 00:00:00', 10, 10, 'Pellentesque', '', 'Phasellus Vitae Mauris Consulting', 'Arthur', 'Gamble', NULL, 0, '1954-02-02'),
-(11, 'magna.nec@risu.ca', 'erat volutpat. Nulla', '0000-00-00 00:00:00', 11, 11, 'nec,', 'Mr.', 'Enim Mi Tempor Incorporated', 'Jesse', 'Evans', NULL, 1, '1973-09-30'),
-(12, 'quis@etnetuset.edu', 'Ut nec', '0000-00-00 00:00:00', 12, 12, 'neque.', 'Ms.', 'Dignissim Pharetra Associates', 'Caesar', 'Ashley', NULL, 0, '1977-08-28'),
-(13, 'urabitur@consequat.c', 'ornare tortor', '0000-00-00 00:00:00', 13, 13, 'adipiscing', 'Ms.', 'Lectus PC', 'Geoffrey', 'Pate', NULL, 0, '1982-04-01'),
-(14, 'dolor@dolor.net', 'odio. Nam', '0000-00-00 00:00:00', 14, 14, 'est,', 'Mr.', 'Ut Pharetra Sed Corp.', 'Bert', 'Gutierrez', NULL, 0, '1986-09-12'),
-(15, 'Mauris.quis@justosit.co.uk', 'et libero.', '0000-00-00 00:00:00', 15, 15, 'bibendum.', 'Dr.', 'Congue Corp.', 'Cara', 'Wilkerson', NULL, NULL, '1999-09-16'),
-(16, 'ac@mauris.edu', 'ullamcorper, nisl arcu iaculis', '0000-00-00 00:00:00', 16, 16, 'Sed', 'Ms.', 'Facilisis Company', 'Curran', 'Davenport', NULL, 0, '1948-12-31'),
-(17, 'Phasellus@nequenon.ca', 'et ultrices', '0000-00-00 00:00:00', 17, 17, 'Nulla', 'Dr.', 'Faucibus Institute', 'Quintessa', 'Davis', NULL, NULL, '1962-08-28'),
-(18, 'blandit@libero.ca', 'arcu.', '0000-00-00 00:00:00', 18, 18, 'non', 'Mr.', 'Eget PC', 'Kane', 'Burke', NULL, 0, '1961-09-10'),
-(19, 'ridiculus@risusMorbi.ca', 'sagittis semper. Nam tempor', '0000-00-00 00:00:00', 19, 19, 'vel', 'Mr.', 'Erat Neque Non LLC', 'Yetta', 'Ellison', NULL, NULL, '2004-07-31'),
-(20, 'amet@fringillami.com', 'Quisque varius.', '0000-00-00 00:00:00', 20, 20, 'ligula', 'Mrs.', 'Nunc Ut Erat Inc.', 'Burke', 'Pace', NULL, NULL, '2006-11-14'),
-(21, 'nec.tellus@Maurisnulla.org', 'vulputate', '0000-00-00 00:00:00', 21, 21, 'lacus', '', 'Vestibulum Inc.', 'Amaya', 'Luna', 1, NULL, '1946-03-15'),
-(22, 'Proin@dolorFuscefeugiat.net', 'nec ante. Maecenas', '0000-00-00 00:00:00', 22, 22, 'ligula.', 'Mrs.', 'Adipiscing Elit Limited', 'Emmanuel', 'Reese', 1, NULL, '1972-05-24');
+(2, 'Sededed', 'lolol', '2016-06-27 09:07:06', 2, 2, 'Paypal', '', '', 'sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero', '', 1, 0, '1945-02-08'),
+(3, 'niblor@inceptos.co.uk', 'Sed dictum. Proin eget', '0000-00-00 00:00:00', 3, 3, 'Credit Card', '', 'Vitae Mauris Sit Inc.', 'Xerxes', 'Morrow', NULL, 0, '1958-11-29'),
+(4, 'luctus@leoin.net', 'Nam interdum enim', '0000-00-00 00:00:00', 4, 4, 'Credit Card', 'Mr.', 'Metus Associates', 'Wandaa', 'Anderson', 1, 1, '1965-10-14'),
+(5, 'nascetur@sollicituda.ca', 'porttitor', '0000-00-00 00:00:00', 5, 5, 'Paypal', '', 'Proin Dolor Nulla Corporation', 'Jolene', 'Workman', NULL, 0, '1957-02-23'),
+(6, 'nec@ateget.co.uk', 'dapibus ligula.', '0000-00-00 00:00:00', 6, 6, 'Credit Card', '', 'Interdum Curabitur LLP', 'Kyla', 'Horne', NULL, 0, '1971-01-27'),
+(7, 'Ut@Fusce.co.uk', 'Donec felis orci, adipiscing', '0000-00-00 00:00:00', 7, 7, 'Bank Transfer', 'Ms.', 'Lectus Corporation', 'Jesse', 'Morris', NULL, 0, '1994-05-20'),
+(8, 'Donec@etnetus.uk', 'tristique senectus et netus', '0000-00-00 00:00:00', 8, 8, 'Paypal', 'Mr.', 'Sed Sapien Limited', 'Oliver', 'Cooke', 1, 0, '1955-11-08'),
+(9, 'sit@sapien.ca', 'Phasellus in felis.', '0000-00-00 00:00:00', 9, 9, 'Bank Transfer', 'Mr.', 'Ultrices A LLC', 'Miriam', 'Griffith', NULL, 0, '1987-12-11'),
+(10, 'erat@elitsed.com', 'vestibulum nec, euismod', '0000-00-00 00:00:00', 10, 10, 'Paypal', '', 'Phasellus Vitae Mauris Consulting', 'Arthur', 'Gamble', NULL, 0, '1954-02-02'),
+(11, 'magna.nec@risu.ca', 'erat volutpat. Nulla', '0000-00-00 00:00:00', 11, 11, 'Bank Transfer', 'Mr.', 'Enim Mi Tempor Incorporated', 'Jesse', 'Evans', NULL, 1, '1973-09-30'),
+(12, 'quis@etnetuset.edu', 'Ut nec', '0000-00-00 00:00:00', 12, 12, 'Paypal', 'Ms.', 'Dignissim Pharetra Associates', 'Caesar', 'Ashley', NULL, 0, '1977-08-28'),
+(13, 'urabitur@consequat.c', 'ornare tortor', '0000-00-00 00:00:00', 13, 13, 'Paypal', 'Ms.', 'Lectus PC', 'Geoffrey', 'Pate', NULL, 0, '1982-04-01'),
+(14, 'dolor@dolor.net', 'odio. Nam', '0000-00-00 00:00:00', 14, 14, 'Bank Transfer', 'Mr.', 'Ut Pharetra Sed Corp.', 'Bert', 'Gutierrez', NULL, 0, '1986-09-12'),
+(15, 'Mauris.quis@justosit.co.uk', 'et libero.', '0000-00-00 00:00:00', 15, 15, 'Credit Card', 'Dr.', 'Congue Corp.', 'Cara', 'Wilkerson', NULL, NULL, '1999-09-16'),
+(16, 'ac@mauris.edu', 'ullamcorper, nisl arcu iaculis', '0000-00-00 00:00:00', 16, 16, 'Bank Transfer', 'Ms.', 'Facilisis Company', 'Curran', 'Davenport', NULL, 0, '1948-12-31'),
+(17, 'Phasellus@nequenon.ca', 'et ultrices', '0000-00-00 00:00:00', 17, 17, 'Bank Transfer', 'Dr.', 'Faucibus Institute', 'Quintessa', 'Davis', NULL, NULL, '1962-08-28'),
+(18, 'blandit@libero.ca', 'arcu.', '0000-00-00 00:00:00', 18, 18, 'Bank Transfer', 'Mr.', 'Eget PC', 'Kane', 'Burke', NULL, 0, '1961-09-10'),
+(19, 'ridiculus@risusMorbi.ca', 'sagittis semper. Nam tempor', '0000-00-00 00:00:00', 19, 19, 'Bank Transfer', 'Mr.', 'Erat Neque Non LLC', 'Yetta', 'Ellison', NULL, 0, '2004-07-31'),
+(20, 'amet@fringillami.com', 'Quisque varius.', '0000-00-00 00:00:00', 20, 20, 'Credit Card', 'Mrs.', 'Nunc Ut Erat Inc.', 'Burke', 'Pace', NULL, NULL, '2006-11-14'),
+(21, 'nec.tellus@Maurisnulla.org', 'vulputate', '0000-00-00 00:00:00', 21, 21, 'Paypal', '', 'Vestibulum Inc.', 'Amaya', 'Luna', 1, NULL, '1946-03-15'),
+(22, 'Proin@dolorFuscefeugiat.net', 'nec ante. Maecenas', '0000-00-00 00:00:00', 22, 22, 'Paypal', 'Mrs.', 'Adipiscing Elit Limited', 'Emmanuel', 'Reese', 1, NULL, '1972-05-24');
 
 --
 -- Indexes for dumped tables
@@ -390,7 +390,7 @@ ALTER TABLE `albums`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tracklist`
 --
@@ -400,7 +400,7 @@ ALTER TABLE `tracklist`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

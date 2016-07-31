@@ -69,9 +69,12 @@ function get_orderedproducts(){
 	echo mysqli_error($graph_link);
 	}
 
-	$age_data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	$orderedprod_data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-	return $age_data;
+	return $orderedprod_data;
 }
-print_r(get_order_data());
+
+$arr = array_merge(get_order_data(), get_age(), get_orderlocations(), get_payments(), get_orderedproducts());
+
+echo json_encode($arr);
 ?>

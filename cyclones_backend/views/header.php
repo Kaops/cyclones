@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Cyclones Backend</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.js"></script>
   <link rel="stylesheet" href="css/main.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700' rel='stylesheet' type='text/css'>
 </head>
