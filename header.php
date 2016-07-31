@@ -18,13 +18,15 @@
 						<li <?php if ($site === "music"): ?>class="header_nav_active"<?php endif; ?>><a href="index.php?site=music">Music</a></li>
 						<li <?php if ($site === "news"): ?>class="header_nav_active"<?php endif; ?>><a href="index.php?site=news">News</a></li>
 						<li <?php if ($site === "shop"): ?>class="header_nav_active"<?php endif; ?>><a href="index.php?site=shop">Shop</a></li>
-							<?php if(isset($_SESSION["logged_in"]) === true){ ?>
+						<li class="<?php if ($site === "cart"): ?>header_nav_active<?php endif; ?> header_nav_borderleft"><a href="index.php?site=cart">Cart</a></li>
 
+							<?php if(isset($_SESSION["logged_in"]) === true){ ?>
+								<li class="header_account" ><a class="header_account" href="#">Account</a></li>
 							<?php } else { ?>
-								<li class="header_login header_nav_borderleft" ><a class="header_login" href="#">Login</a></li>
+								<li class="header_login" ><a class="header_login" href="#">Login</a></li>
 								<div id="signin-dropdown">
 
-					        <form method="post" class="signin" action="#">
+					        <form method="post" class="signin" action="login.php">
 					        <fieldset class="textbox">
 					        <label for="username" class="username">
 					        <p>Email</p>
@@ -53,6 +55,7 @@
 					    	</div>
 
 							<?php }; ?>
+
 					</ul>
 				</nav>
 			</header>
