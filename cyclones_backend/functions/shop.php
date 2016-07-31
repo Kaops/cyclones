@@ -15,10 +15,11 @@ function delete_item($id) {
 
   return $result;
 }
-function update_item($id, $name, $description, $price, $in_stock, $img) {
+function update_item($id, $name, $description, $price, $in_stock, $img, $on_sale, $sale_price) {
+
   global $link;
-  $sql = "UPDATE product 
-  SET name = '$name', description = '$description', price = '$price', in_stock = '$in_stock', img = '$img'
+  $sql = "UPDATE product
+  SET name = '$name', description = '$description', price = '$price', in_stock = '$in_stock', img = '$img', on_sale = '$on_sale', sale_price = '$sale_price'
   WHERE id = '$id'";
   $result = mysqli_query($link, $sql);
 
@@ -39,7 +40,7 @@ function get_item($id) {
 }
 
 function get_items() {
-  
+
   global $link;
 
   $sql = "SELECT * FROM product";
