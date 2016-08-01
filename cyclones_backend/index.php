@@ -1,10 +1,5 @@
 <?php
 
-// OB = Output Buffer
-// Alle Ausgaben werden in einem Zwischenspeicher gespeichert und erst
-// ausgegeben wenn z.B. ob_end_flush() aufgerufen wird.
-// Somit umgeht man mögliche "Headers already sent"-Error, wenn bspw. versucht
-// wird einen Header zu setzen nachdem bereits eine Ausgabe stattgefunden hat.
 ob_start();
 
 session_start();
@@ -31,7 +26,7 @@ require("functions/graphs.php");
 if($site == "login"){
 	include("logic/login.php");
 }
-if(isset($_SESSION["logged_in"]) === true){
+if(isset($_SESSION["logged_in"]) === true && $_SESSION["is_admin"] === true){
 	if($site == "users") {
 	  include("logic/users.php");
 	} elseif($site == "blog") {
@@ -46,7 +41,7 @@ if(isset($_SESSION["logged_in"]) === true){
 	else {
 	  include("views/dashboard.php");
 	}
-}else {
+} else {
 	include("views/login_form.php");
 }
 

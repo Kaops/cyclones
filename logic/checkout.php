@@ -7,24 +7,35 @@
       //print_r($entry);
       $errors = [];
   ?>
-  <?php if(isset($_SESSION["logged_in"]) === true){ ?>
+  <?php if(isset($_SESSION["logged_in"]) === true){
+    $logid = $_SESSION['user_id'];
+    $sql = "SELECT * FROM users WHERE id = '$logid'";
+    $result = mysqli_query($link, $sql);
+    $pre_user = mysqli_fetch_assoc($result);
+
+    $sql = "SELECT * FROM address WHERE user_id = '$logid'";
+    $result = mysqli_query($link, $sql);
+    $pre_address = mysqli_fetch_assoc($result);
+    ?>
+
+
   <?php } else { ?>
   <div class="site_main_sliderwrapper full-bg">
 
     <div class="main_loginwrapper">
       <h2 class="main_headline">Login</h2><a href="#" class="main_registerlink">Register</a>
-      <form action="loginform.php" method="post">
+      <form action="logic/login.php?site=checkout" method="post">
         <div class="main_loginform">
           <p>
             <label for="email_input" class="main_form_label">
             Email Address
-            <input type="text" id="email_input" name="email" class="main_form_input">
+            <input type="text" id="email_input" name="login_username" class="main_form_input">
             </label>
           </p>
           <p>
             <label for="pw_input" class="main_form_label">
             Password
-            <input type="text" id="pw_input" name="password" class="main_form_input">
+            <input type="text" id="pw_input" name="login_password" class="main_form_input">
             </label>
           </p>
           <p>
@@ -68,14 +79,14 @@
           <div class="main_form_split">
             <label for="title_input" class="main_form_label">
               Title
-              <input type="text" id="title_input" name="title" class="main_form_input_half">
+              <input type="text" id="title_input" name="title" class="main_form_input_half" value="<?php if(isset($_SESSION['logged_in']) === true){ echo $pre_user['title']; } ?>">
             </label>
           </div>
         </div>
         <p class="main_billingform_row">
           <label for="address_input" class="main_form_label">
           Address *
-          <input type="text" id="address_input" name="address" class="main_form_input" required>
+          <input type="text" id="address_input" name="address" class="main_form_input" required value="<?php if(isset($_SESSION["logged_in"]) === true){ echo $pre_address['street']; } ?>">
           </label>
         </p>
         <p class="main_billingform_row">
@@ -93,13 +104,13 @@
           <div class="main_form_split">
             <label for="city_input" class="main_form_label">
             City *
-            <input type="text" id="city_input" name="city" class="main_form_input_half" pattern="\w{3,}" title="Need to be at least 3 characters long" required>
+            <input type="text" id="city_input" name="city" class="main_form_input_half" pattern="\w{3,}" title="Need to be at least 3 characters long" required value="<?php if(isset($_SESSION["logged_in"]) === true){ echo $pre_address['city']; } ?>">
             </label>
           </div>
           <div class="main_form_split">
             <label for="plz_input" class="main_form_label">
             Post Code *
-            <input type="text" id="plz_input" name="plz" class="main_form_input_half"  title="Can only contain numbers" required>
+            <input type="text" id="plz_input" name="plz" class="main_form_input_half"  title="Can only contain numbers" required value="<?php if(isset($_SESSION["logged_in"]) === true){ echo $pre_address['plz']; } ?>">
             </label>
           </div>
         </div>
@@ -111,13 +122,13 @@
         <p class="main_billingform_row">
           <label for="name_input" class="main_form_label">
           Name *
-          <input type="text" id="name_input" name="name" class="main_form_input" pattern="[a-zA-Z]{1,20}$" title="Needs to be between 2-20 characters long, can only contain Letters" required>
+          <input type="text" id="name_input" name="name" class="main_form_input" pattern="[a-zA-Z]{1,20}$" title="Needs to be between 2-20 characters long, can only contain Letters" required value="<?php if(isset($_SESSION["logged_in"]) === true){ echo $pre_user['name']; } ?>">
           </label>
         </p>
         <p class="main_billingform_row">
           <label for="surname_input" class="main_form_label">
           Surname *
-          <input type="text" id="surname_input" name="surname" class="main_form_input" pattern="[a-zA-Z]{1,20}$" title="Needs to be between 2-20 characters long, can only contain Letters" required>
+          <input type="text" id="surname_input" name="surname" class="main_form_input" pattern="[a-zA-Z]{1,20}$" title="Needs to be between 2-20 characters long, can only contain Letters" required value="<?php if(isset($_SESSION["logged_in"]) === true){ echo $pre_user['surname']; } ?>">
           </label>
         </p>
         <?php if(isset($_SESSION["logged_in"]) === true){ ?>

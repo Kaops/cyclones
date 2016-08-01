@@ -1,6 +1,6 @@
 <?php
 require("./functions/helpers.php");
-session_start();
+//session_start();
 error_reporting(-1);
 setlocale(LC_ALL, 'de_AT');
 

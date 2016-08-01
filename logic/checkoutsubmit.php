@@ -51,7 +51,7 @@ if(is_post_request()) {
       $error = 1;
       $errors["auth"] = "Your post code can only consist of numbers.";
     }
-    if(strlen($name) > 3) {
+    if(strlen($name) > 2) {
 
     } else {
       $error = 1;
@@ -209,27 +209,37 @@ if(is_post_request()) {
     //if fuckwit customer fucked it up
     if($error == 1) {
       echo get_error($errors, "auth");
-      print_r($birthdate);
+      //print_r($birthdate);
     } else { //if customer finally got his shit together
-      print_r("Order successful!");
+
 
       if (isset($_POST["billing_email"])) {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         global $link;
 
         $sql = "INSERT INTO
-        users (email, pw_hash, pref_payment, title, name, surname, birthday, address, country, city, postcode)
+        users (email, pw_hash, pref_payment, title, name, surname, birthday)
         VALUES
-        ('$email', '$password_hash', '$payment', '$title', '$name', '$surname', '$birthdate', '$address', '$country', '$city', '$plz')";
+        ('$email', '$password_hash', '$payment', '$title', '$name', '$surname', '$birthdate')";
         $result = mysqli_query($link, $sql);
-      }
 
-      global $link;
-      $sql = "SELECT * FROM users WHERE email = '$email'";
-      $result = mysqli_query($link, $sql);
-      //print_r($result);
-      $idhelper = mysqli_fetch_assoc($result);
-      //print_r($idhelper);
+        $address_user_id = mysqli_insert_id($link);
+
+        $sql = "INSERT INTO
+        address (user_id, country, city, plz, street)
+        VALUES
+        ('$address_user_id', '$country', '$city', '$plz', '$address')";
+        $result = mysqli_query($link, $sql);
+
+      }
+      if(!isset($_SESSION["logged_in"]) === true){
+        global $link;
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = mysqli_query($link, $sql);
+        //print_r($result);
+        $idhelper = mysqli_fetch_assoc($result);
+        //print_r($idhelper);
+      }
       if(isset($_SESSION["logged_in"]) === true){$user_id = $_SESSION['user_id'];}else {$user_id = $idhelper['id'];}
 
       if ($_POST["use_alternate"] == 1) {
@@ -239,6 +249,13 @@ if(is_post_request()) {
         $plz = $alternate_plz;
         $name = $alternate_name;
         $surname = $alternate_surname;
+
+        $sql = "INSERT INTO
+        address (country, city, plz, street)
+        VALUES
+        ('$country', '$city', '$plz', '$address')";
+        $result = mysqli_query($link, $sql);
+        $alternate_address_id = mysqli_insert_id($link);
       }
       $productids = [];
       foreach ($products_in_cart as $product_in_cart){
@@ -249,10 +266,18 @@ if(is_post_request()) {
       $ordered_product_id = $productids[0];
       print_r($ordered_product_id);
 
+      if ($_POST["use_alternate"] == 1) { $address_id = $alternate_address_id; } else {
+        $sql = "SELECT * FROM users WHERE id = '$user_id'";
+        $result = mysqli_query($link, $sql);
+        //print_r($result);
+        $address_idhelper = mysqli_fetch_assoc($result);
+        $address_id = $address_idhelper['address_id'];
+      }
+
       $sql = "INSERT INTO
-      orders (user_id, sum, ordered_product_id, address, country, city, postcode, name, surname, payed_with, shipping_method )
+      orders (user_id, sum, ordered_product_id, address_id, name, surname, payed_with, shipping_method )
       VALUES
-      ('$user_id', '$total_after_submission', '$ordered_product_id', '$address', '$country', '$city', '$plz', '$name', '$surname', '$payment', '$shipping' )";
+      ('$user_id', '$total_after_submission', '$ordered_product_id', '$address_id', '$name', '$surname', '$payment', '$shipping' )";
       $result = mysqli_query($link, $sql);
       print_r($result);
 
@@ -269,6 +294,7 @@ if(is_post_request()) {
         $result = mysqli_query($link, $sql);
 
       }
+      redirect_to("index.php?site=ordersuccess", "Logged in as " . $user['email'] . " on " . date('l jS \of F Y h:i:s A'), "success");
       //empty cart after order was submitted
       $_SESSION['cart'] = [];
 

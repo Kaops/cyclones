@@ -22,20 +22,21 @@
 
 							<?php if(isset($_SESSION["logged_in"]) === true){ ?>
 								<li class="header_account" ><a class="header_account" href="#">Account</a></li>
+								<li class="header_logout" ><a class="header_logout" href="index.php?site=logout">Logout</a></li>
 							<?php } else { ?>
 								<li class="header_login" ><a class="header_login" href="#">Login</a></li>
 								<div id="signin-dropdown">
 
-					        <form method="post" class="signin" action="login.php">
+					        <form method="post" class="signin" action="logic/login.php?site=<?php echo $site ?>">
 					        <fieldset class="textbox">
 					        <label for="username" class="username">
 					        <p>Email</p>
-					        <input class="main_form_input_half" id="username" name="username" value="" type="text">
+					        <input class="main_form_input_half" id="username" name="login_username" value="" type="text" required>
 					        </label>
 
 					        <label for="password" class="password">
 					        <p>Password</p>
-					        <input class="main_form_input_half" id="password" name="password" value="" type="password">
+					        <input class="main_form_input_half" id="password" name="login_password" value="" type="password" required>
 					        </label>
 					        </fieldset>
 
@@ -45,12 +46,12 @@
 					        <span>Remember me</span>
 					        </label>
 									<br>
-					        <button class="main_form_btn" type="submit">Sign in</button>
+					        <button class="main_form_btn" type="submit" >Sign in</button>
 					        </fieldset>
 					        <p>
 					        Don't have an account?
 					        </p>
-									<button class="main_form_btn" type="button">Register</button>
+									<a href="index.php?site=register" class="main_form_btn" type="button">Register</a>
 					        </form>
 					    	</div>
 
