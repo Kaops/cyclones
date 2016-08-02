@@ -1,0 +1,33 @@
+﻿Deine Abgabe ist leider nicht ok.
+
+Bitte verbessere folgende Punkte:
+
+- HTML ist nicht valide
+### TODO: Script tag into body + fix name attributes in checkout.html
+### DONE
+
+- Form tag attribute falsch gesetzt
+### TODO: fix html warnings and errors in checkout
+### DONE
+
+- Gender bitte mit form tags, das kann man genau so stylen ohne javascript
+### TODO: change -> restyle
+### DONE
+
+
+- Anker, Buttons, input auch pseudoklasse wie hover,focus usw stylen und konsistent arbeiten.
+### TODO: make general case button and anchor classes, rid css of classes that are rendered obsulete as a result of that change
+### DONE
+
+- Startseite wirkt noch nicht fertig-> bitte hier mehr Inhalte
+### TODO: add the rest of the slides and add functionality with jquery
+### DONE
+
+
+- Semantik ist teilweise noch nicht ganz ok: Shop items sollten keinen section tag sondern article tag bekommen, und der shop item container den section tag
+### TODO: swap tags
+### DONE
+
+Gib die Verbesserung innerhalb der nächsten 2 Wochen noch einmal ab.
+
+lg, Stephan
