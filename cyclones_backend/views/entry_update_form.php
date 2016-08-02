@@ -17,7 +17,7 @@
 
   	<p>
      <button type="submit" class="entry_btn" >Update</button> 
-     <button class="entry_btn"><a class="" href="index.php?site=users&amp;action=delete&amp;id=<?php echo $blog['id']; ?>">Delete</a></button>
+     <a class="delete_entry" href="index.php?site=blog&amp;action=delete&amp;id=<?php echo $blog['id']; ?>">Delete</a>
     </p>
 </form>
 </section>

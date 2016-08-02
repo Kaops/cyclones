@@ -1,5 +1,10 @@
 <?php
 
+// OB = Output Buffer
+// Alle Ausgaben werden in einem Zwischenspeicher gespeichert und erst
+// ausgegeben wenn z.B. ob_end_flush() aufgerufen wird.
+// Somit umgeht man mögliche "Headers already sent"-Error, wenn bspw. versucht
+// wird einen Header zu setzen nachdem bereits eine Ausgabe stattgefunden hat.
 ob_start();
 
 session_start();
@@ -22,11 +27,11 @@ require("functions/blog.php");
 require("functions/music.php");
 require("functions/shop.php");
 require("functions/users.php");
-require("functions/graphs.php");
+require("functions/orders.php");
 if($site == "login"){
 	include("logic/login.php");
 }
-if(isset($_SESSION["logged_in"]) === true && $_SESSION["is_admin"] === true){
+if(isset($_SESSION["logged_in"]) === true){
 	if($site == "users") {
 	  include("logic/users.php");
 	} elseif($site == "blog") {
@@ -36,12 +41,12 @@ if(isset($_SESSION["logged_in"]) === true && $_SESSION["is_admin"] === true){
 	}elseif($site == "shop"){
 		include("logic/shop.php");
 	}elseif($site == "orders"){
-		include("views/orders.php");
+		include("logic/orders.php");
 	}
 	else {
 	  include("views/dashboard.php");
 	}
-} else {
+}else {
 	include("views/login_form.php");
 }
 

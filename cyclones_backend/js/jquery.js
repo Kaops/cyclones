@@ -296,6 +296,14 @@ $(".delete_entry_btn").on("click", function(event){
        		event.preventDefault();
        }
 });
+$(".delete_order").on("click", function(event){
+   var retVal = confirm("Really delete Order?");
+       if( retVal == true ){
+       }
+       else{
+          event.preventDefault();
+       }
+});
 setInterval(function(){
   var date = new Date();
   var format = [

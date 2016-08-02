@@ -22,7 +22,7 @@ if(isset($_GET['action'])) {
   }
   elseif($action == "update_item" && is_post_request()) {
 
-    update_item($_POST["id"], $_POST["name"], $_POST["description"], $_POST["price"], $_POST["in_stock"], $_POST["img"], $_POST["sale"], $_POST["sale_price"] );
+    update_item($_POST["id"], $_POST["name"], $_POST["description"], $_POST["price"], $_POST["in_stock"], $_POST["img"] );
 
     redirect_to("index.php?site=shop", "Item with ID: " . $_POST["id"] . " at " . date('l jS \of F Y h:i:s A') . " updated");
 

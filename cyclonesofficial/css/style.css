@@ -492,11 +492,12 @@ MUSIC
 */
 .album_details{
 	display:flex;
+	margin-bottom: 150px;
 }
 .album_tracklist{
 	flex-basis:25%;
 }
-.tracklist{
+.tracklist, .buylist{
 	list-style: none;
 	padding: 10px 40px;
 }
@@ -507,26 +508,32 @@ MUSIC
 	background-color:#cae0de;
 	padding:0px 30px;
 }
-.tracklist li {
+.music_sidebar_wrapper p {
+	line-height: 1.5em;
+	padding:20px 0px;
+}
+.tracklist li, .buylist li {
 	line-height: 50px;
 	text-align: center;
 	text-transform: uppercase;
 	border-bottom: 1px solid #bbb;
 	font-weight: bold;
 }
-.tracklist li:hover {
+.tracklist li:hover, .buylist li:hover {
 	background-color: #6fb2ab ;
 	content: '>';
 }
-.tracklist li a {
+.tracklist li a, .buylist li a {
 	display:block;
 }
 .album_details_cover{
 	flex-basis:50%;
+	background-color: #cae0de;
 }
 .album_details_cover img{
 	width: 100%;
 	height: auto;
+	
 
 }
 .albumlist_caption{
@@ -555,9 +562,10 @@ MUSIC
   width: 100%;
   overflow: auto;
   padding:0;
+  margin-bottom: 150px;
 }
 .albumlist li {
-  margin: 0% 2% 0% 0%;
+  margin: 0% 2% 2% 0%;
   width: 32%;
   height: 32%;
   float: left;
@@ -637,8 +645,9 @@ MUSIC
 	left: 50%;
     transform: translate(-50%, -20%);
 	z-index: 1;
+	font-size: 20px;
 }
-.site_main_sliederlink{
+a.site_main_sliderlink{
 	color:#232323;
 	background-color: #6fb2ab;
 	padding: 10px 20px;
@@ -852,6 +861,7 @@ MUSIC
 BLOG
 
 */
+
 .blog_main_content{
 	min-width: 1024px;
 }
@@ -870,16 +880,16 @@ BLOG
 	background-size: cover;
 }
 .blog_headimg-1{
-	background: url(../img/slider_img1.jpg) no-repeat;
+	background: url(../img/bassist.PNG) no-repeat;
 }
 .blog_headimg-2{
-	background: url(../img/slider_img2.jpg) no-repeat;
+	background: url(../img/guit1.PNG) no-repeat;
 }
 .blog_headimg-3{
-	background: url(../img/slider_img3.jpg) no-repeat;
+	background: url(../img/guit2.PNG) no-repeat;
 }
 .blog_headimg-4{
-	background: url(../img/slider_img4.jpg) no-repeat;
+	background: url(../img/drums.PNG) no-repeat;
 }
 .blog_maincontent_wrapper {
 	height: 1200px;
@@ -909,8 +919,11 @@ BLOG
 	left:0;
 	padding: 50px 0px;
 	border-bottom: 1px solid #bbbbbb;
-	line-height: 1.5em;
+
 	display:flex;
+}
+.blog_entry p {
+	line-height: 1.5em;
 }
 .blog_entry_textwrapper {
 	flex-basis:63%;
@@ -978,6 +991,7 @@ a.readmore-btn{
 .blog_tourdates{
 	padding:50px;
 	text-align: center;
+	overflow:hidden;
 }
 .blog_tourdates td, .blog_tourdates th {
 	line-height: 2.5em;
@@ -986,6 +1000,7 @@ a.readmore-btn{
 .blog_tourdates table {
 	border-collapse: collapse; 
 	width: 100%;
+	margin-bottom: 40px;
 }
 a.blog_loadbtn {
 	width: 100%;

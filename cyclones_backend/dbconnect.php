@@ -1,9 +1,9 @@
-<?php
+<?php 
 
 // mysqli_connect Parameter: Host, Benutzer, Passwort, Datenbank
 // wird in Variable gespeichert, damit php weiß, in welcher Verbindung
 // die queries ausgeführt werden sollen
-$link = mysqli_connect('localhost', 'root', '', 'cyclones');
+$link = mysqli_connect('localhost', 'root', 'secret', 'cyclones_db');
 
 if (!$link) {
   die('Connect Error (' . mysqli_connect_errno() . ') '

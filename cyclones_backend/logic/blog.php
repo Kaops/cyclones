@@ -26,7 +26,7 @@ if(isset($_GET['action'])) {
   elseif($action == "delete" && isset($_GET["id"])){
     delete_entry($_GET["id"]);
 
-    redirect_to("index.php?site=blog", "User with ID: " . $_GET["id"] . " at " . date('l jS \of F Y h:i:s A') . " deleted", "success");
+    redirect_to("index.php?site=blog", "Entry with ID: " . $_GET["id"] . " at " . date('l jS \of F Y h:i:s A') . " deleted", "success");
   }
  }else{
       
