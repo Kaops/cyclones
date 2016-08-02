@@ -48,7 +48,6 @@
 						</p>
 						<div class="blog_socialmedia_share">
 							<a href="#" class="share-btn share-1">Share</a>
-							<a href="https://plus.google.com/share?url=blog.php%23<?php echo $entry['id']; ?>"><img src="img/google.png" alt="" class="blog_socialmedia_img"></a>
 							<a href="https://www.facebook.com/sharer/sharer.php?u=blog.php%23<?php echo $entry['id']; ?>"><img src="img/fb.png" alt="" class="blog_socialmedia_img"></a>
 							<a href="https://twitter.com/home?status=blog.php%23<?php echo $entry['id']; ?>"><img src="img/twitter.png" alt="" class="blog_socialmedia_img"></a>
 						</div>
@@ -82,7 +81,7 @@
 
 		</div>
 		<div class="blog_entry_bar">
-			<a href="#" class="blog_entry_loadbtn btn">Load more blog Entries</a>	
+			<a href="#" class="blog_entry_loadbtn btn" data-entries="<?php echo $max_entries; ?>">Load more blog Entries</a>	
 		</div>
 	</main>
 
