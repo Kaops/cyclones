@@ -1,8 +1,8 @@
 <?php
-function new_item($name, $description, $price, $in_stock, $img){
+function new_item($name, $description, $price, $in_stock, $img, $category){
   global $link;
 
-  $sql = "INSERT INTO `product`(`name`, `description`, `price`, `in_stock`, `img`) VALUES ('$name', '$description', '$price', '$in_stock', '$img')";
+  $sql = "INSERT INTO `product`(`name`, `description`, `price`, `in_stock`, `img`, `category`) VALUES ('$name', '$description', '$price', '$in_stock', '$img', '$category')";
   $result = mysqli_query($link, $sql);
 
   return $result;

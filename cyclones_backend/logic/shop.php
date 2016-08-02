@@ -8,8 +8,12 @@ if(isset($_GET['action'])) {
      include("views/item_edit_form.php");
   }
   elseif($action == "add_item" && is_post_request()){
-    new_item($_POST["name"], $_POST["description"], $_POST["price"], $_POST["in_stock"], $_POST["img"] );
-    redirect_to("index.php?site=shop", "New item at " . date('l jS \of F Y h:i:s A') . " added");
+    $file_name = $_FILES['img']['tmp_name'];
+    $original_name = $_FILES['img']['name'];
+    $waddup = move_uploaded_file($_FILES['img']['tmp_name'], "../img/shopitems/$original_name");
+    new_item($_POST["name"], $_POST["description"], $_POST["price"], $_POST["in_stock"], "img/shopitems/".$original_name,  $_POST["category"]);
+
+    redirect_to("index.php?site=shop", "New item at " . date('l jS \of F Y h:i:s A') . " added $waddup");
   }
   elseif($action == "edit" && isset($_GET["id"])){
     $id = (int)$_GET["id"];

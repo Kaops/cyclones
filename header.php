@@ -21,7 +21,7 @@
 						<li class="<?php if ($site === "cart"): ?>header_nav_active<?php endif; ?> header_nav_borderleft"><a href="index.php?site=cart">Cart</a></li>
 
 							<?php if(isset($_SESSION["logged_in"]) === true){ ?>
-								<li class="header_account" ><a class="header_account" href="#">Account</a></li>
+								<li class="header_account" ><a class="header_account" href="index.php?site=account">Account</a></li>
 								<li class="header_logout" ><a class="header_logout" href="index.php?site=logout">Logout</a></li>
 							<?php } else { ?>
 								<li class="header_login" ><a class="header_login" href="#">Login</a></li>
@@ -41,10 +41,6 @@
 					        </fieldset>
 
 					        <fieldset class="remb">
-					        <label class="remember">
-					        <input type="checkbox" value="1" name="remember_me" />
-					        <span>Remember me</span>
-					        </label>
 									<br>
 					        <button class="main_form_btn" type="submit" >Sign in</button>
 					        </fieldset>

@@ -35,6 +35,8 @@ if($site == "bio") {
   include("views/registersuccess.php");
 }elseif($site == "logout") {
   include("logic/logout.php");
+}elseif($site == "account") {
+  include("logic/account.php");
 } else {
   include("views/home.php");
 }
